@@ -28,7 +28,7 @@ class MongoTestCase(TestCase):
             connection.drop_database(db_name)
             disconnect(db_alias)
             connect(db_name, port=settings.MONGO_PORT)
-        super(MongoTestCase, self)._pre_setup()
+        #super(MongoTestCase, self)._pre_setup()
 
     def _post_teardown(self):
         from mongoengine.connection import get_connection, disconnect
@@ -36,5 +36,5 @@ class MongoTestCase(TestCase):
             connection = get_connection(db_alias)
             connection.drop_database(db_name)
             disconnect(db_alias)
-        super(MongoTestCase, self)._post_teardown()
+        #super(MongoTestCase, self)._post_teardown()
 
