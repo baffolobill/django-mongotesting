@@ -30,7 +30,7 @@ class MongoTestRunner(DjangoTestSuiteRunner):
             disconnect(db_alias)
             connect(db_name, port=settings.MONGO_PORT)
             print 'Creating mongo test database ' + db_name
-        return super(MongoTestRunner, self).setup_databases(**kwargs)
+        return [], []#super(MongoTestRunner, self).setup_databases(**kwargs)
 
     def teardown_databases(self, old_config, **kwargs):
         from mongoengine.connection import get_connection, disconnect
